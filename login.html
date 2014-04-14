@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>登录</title>
+    <meta charset="utf-8">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/signin.css" rel="stylesheet">
+  </head>
+  <body>
+  	<div class="container">
+      <form class="form-signin" role="form">
+        <h2 class="form-signin-heading">登录</h2>
+        <input type="text" class="form-control" placeholder="用户名" required autofocus value="linychuo@gmail.com">
+        <input type="password" class="form-control" placeholder="密码" required value="lyc198611">
+        <label class="checkbox">
+          <input type="checkbox" value="remember-me">　记住我
+        </label>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">登录</button>
+      </form>
+    </div>
+    <script src="js/jquery-1.8.2.min.js"></script>
+    <script type="text/javascript">
+    var http = require('http');
+    var qs=require('querystring');
+
+    $(".btn-lg").click(function(){
+    	var uname = $("input[type='text']").val();
+    	var pwd = $("input[type='password']").val();
+    	var postData = {email: uname, password: pwd};
+    	var content=qs.stringify(postData);
+    	
+    	var options = {
+    		host: "www.douban.com",
+    		path: "/j/app/login",
+    		app_name: "radio_desktop_win",
+    		method: "GET",
+    		version: 100
+    	};
+    	
+    	var req = http.request(options, function(res){
+    		alert(res);
+    		
+    	});
+    	req.write(content);
+    	req.end();
+    });
+    </script>
+  </body>
+</html>

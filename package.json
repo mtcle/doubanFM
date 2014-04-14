@@ -1,0 +1,11 @@
+{
+  "name": "nw-demo",
+  "main": "index.html",
+  "window": {
+  	"toolbar": false,
+  	"width": 640,
+  	"height": 385,
+  	"position": "center",
+  	"resizable": false
+  }
+}

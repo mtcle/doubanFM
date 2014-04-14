@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Douban FM</title>
+    <meta charset="utf-8">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <style type="text/css">
+    body{padding:10px;height: 100%;overflow: hidden;}
+    </style>
+  </head>
+  <body>
+		<div class="row">
+		  <div class="col-xs-6">
+		  	<div class="panel panel-info">
+		  		<div class="panel-heading">频道</div>
+				  <div class="panel-body" id="channels"></div>
+				  <audio id="dbplayer"></audio>
+				</div>
+		  </div>
+		  <div class="col-xs-6" style="text-align:center">
+		  	<div class="panel panel-default">
+				  <div class="panel-body">
+				  	<img src="http://img3.douban.com/mpic/s4088274.jpg" height="135" width="150" id="album_pic">
+				    <h3 id="album_title">album</h3>
+	        	<h4 id="song_title">song</h4>
+				  </div>
+				  <div class="panel-footer">
+				  	<div class="btn-group">
+					  	<button type="button" class="btn btn-lg glyphicon glyphicon-heart" role="like"/>
+		        	<button type="button" class="btn btn-lg glyphicon glyphicon-play" role="play"/>
+		        	<button type="button" class="btn btn-lg glyphicon glyphicon-fast-forward" role="next"/>
+		        	<button type="button" class="btn btn-lg glyphicon glyphicon-trash" role="remove"/>
+	        	</div>
+				  </div>
+				</div>
+		  </div>
+		</div>
+		
+		<script src="js/jquery-2.1.0.min.js"></script>
+		<script src="js/markup.min.js"></script>
+    <script src="js/app.js"></script>
+    <script type="text/template" id="item-template">
+    	{{channels}}<a class="btn btn-sm{{if active}} active {{/if}}" role="channel" channelid="{{channel_id}}">{{name}}</a>{{/channels}}
+    </script>
+  </body>
+</html>
